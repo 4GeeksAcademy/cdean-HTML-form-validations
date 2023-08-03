@@ -14,29 +14,29 @@
           <h3>Payment form example</h3>
         </div>
         <div class="card-body">
-            <div class="alert alert-danger fw-bold" role="alert">
+            <div class="alert alert-danger fw-bold visually-hidden" id="alert" role="alert">
                 Some fields are missing
               </div>
-            <form class="row g-3">
+            <form onsubmit="formValidation(event)"class="row g-3">
                 <div class="col-md-4">
                   <label for="inputEmail4" class="form-label">Card #</label>
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="XXXXXXXXXXXXXXXX">
+                  <input type="email" class="form-control" id="inputCard" placeholder="XXXXXXXXXXXXXXXX">
                 </div>
                 <div class="col-md-4">
                   <label for="inputPassword4" class="form-label">CVC #</label>
-                  <input type="password" class="form-control" id="inputPassword4" placeholder="0000">
+                  <input type="password" class="form-control" id="inputCVC" placeholder="0000">
                 </div>
                 <div class="col-4">
                   <label for="inputAddress" class="form-label">Amount</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="Amount">
+                  <input type="text" class="form-control" id="inputAmount" placeholder="Amount">
                 </div>
                 <div class="col-6">
                   <label for="inputAddress2" class="form-label">First Name</label>
-                  <input type="text" class="form-control" id="inputAddress2">
+                  <input type="text" class="form-control" id="inputFirstName">
                 </div>
                 <div class="col-md-6">
                   <label for="inputCity" class="form-label">Last Name</label>
-                  <input type="text" class="form-control" id="inputCity">
+                  <input type="text" class="form-control" id="inputLastName">
                 </div>
                 <div class="col-md-6">
                     <label for="inputCity" class="form-label">City</label>
@@ -46,7 +46,8 @@
                   <label for="inputState" class="form-label">State</label>
                   <select id="inputState" class="form-select">
                     <option selected>Pick a state...</option>
-                    <option>...</option>
+                    <option>Montevideo</option>
+                    <option>Rivera</option>
                   </select>
                 </div>
                 <div class="col-md-3">
@@ -91,11 +92,12 @@
         <!-- abro card footer -->
         <div class="card-footer d-grid gap-2 d-md-flex justify-content-md-end bg-body-secondary">
           <a href="#" class="btn btn-secondary">Cancel</a>
-          <a href="#" class="btn btn-primary">Send</a>
+          <a href="#" type="submit" class="btn btn-primary" id="send">Send</a>
         </div>
       </div>
       <!-- cierro card -->
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="./app.js"></script>
   </body>
 </html>
