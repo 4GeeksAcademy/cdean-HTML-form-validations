@@ -9,6 +9,7 @@ let state = document.getElementById("inputState");
 let zipcode = document.getElementById("inputZip");
 let message = document.getElementById("floatingTextarea");
 let alert = document.getElementById("alert");
+let grupoRadio = document.querySelector("input[name='inlineRadioOptions']:checked")
 
 
 window.onload = function formValidation(event) {
@@ -72,7 +73,7 @@ window.onload = function formValidation(event) {
             hideAlert();
         }
         //controla campo city
-        if(city.value == null) {
+        if(city.value == "") {
             console.log("city vacío");
             city.className="form-control bg-danger bg-opacity-25";
             displayAlert();
@@ -100,13 +101,17 @@ window.onload = function formValidation(event) {
         }
         //controla message
         if(message.value == "") {
-            console.log("zipcode vacío");
+            console.log("msj vacío");
             message.className="form-control bg-danger bg-opacity-25";
             displayAlert();
         } else {
             message.className="form-control";
             hideAlert();
         }
+
+        console.log(grupoRadio[0]); 
+
+        
     }
 
 
