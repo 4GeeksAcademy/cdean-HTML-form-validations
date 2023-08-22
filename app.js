@@ -9,7 +9,8 @@ let state = document.getElementById("inputState");
 let zipcode = document.getElementById("inputZip");
 let message = document.getElementById("floatingTextarea");
 let alert = document.getElementById("alert");
-let grupoRadio = document.querySelector("input[name='inlineRadioOptions']:checked")
+let accept = document.querySelectorAll("input[name='inlineRadioOptions']")
+console.log(accept);
 
 
 window.onload = function formValidation(event) {
@@ -28,13 +29,14 @@ window.onload = function formValidation(event) {
     
     function chequeo() {
         //contra campo card#
+        hideAlert();
         if(cardNumber.value == "") {
             console.log("Tarjeta vacía");
             cardNumber.className="form-control bg-danger bg-opacity-25";
             displayAlert();
         } else {
             cardNumber.className="form-control";
-            hideAlert();
+            //hideAlert();
         }
         //controla campo cvc
         if(cvc.value == "") {
@@ -43,7 +45,7 @@ window.onload = function formValidation(event) {
             displayAlert();
         } else {
             cvc.className="form-control";
-            hideAlert();
+            //hideAlert();
         }
         //controla campo amount
         if(amount.value == "") {
@@ -52,7 +54,7 @@ window.onload = function formValidation(event) {
             displayAlert();
         } else {
             amount.className="form-control";
-            hideAlert();
+            //hideAlert();
         }
         //controla campo First Name
         if(firstName.value == "") {
@@ -61,7 +63,7 @@ window.onload = function formValidation(event) {
             displayAlert();
         } else {
             firstName.className="form-control";
-            hideAlert();
+            //hideAlert();
         }
         //controla campo Last Name
         if(lastName.value == "") {
@@ -70,7 +72,7 @@ window.onload = function formValidation(event) {
             displayAlert();
         } else {
             lastName.className="form-control";
-            hideAlert();
+            //hideAlert();
         }
         //controla campo city
         if(city.value == "") {
@@ -79,7 +81,7 @@ window.onload = function formValidation(event) {
             displayAlert();
         } else {
             city.className="form-control";
-            hideAlert();
+            //hideAlert();
         }
         //controla campo state
         if(state.value == "Pick a state...") {
@@ -88,7 +90,7 @@ window.onload = function formValidation(event) {
             displayAlert();
         } else {
             state.className="form-control";
-            hideAlert();
+            //hideAlert();
         }
         //controla postal code
         if(zipcode.value == "") {
@@ -97,7 +99,16 @@ window.onload = function formValidation(event) {
             displayAlert();
         } else {
             zipcode.className="form-control";
-            hideAlert();
+            //hideAlert();
+        }
+        //controla radiobutton
+        if(!accept[0].checked  && !accept[1].checked  && !accept[2].checked  && !accept[3].checked) {
+            console.log("radio vacío");
+            document.getElementById("accept").className="form-check-label mb-1 bg-danger bg-opacity-25";
+            displayAlert();
+        } else {
+            document.getElementById("accept").className="form-check-label mb-1";
+            //hideAlert();
         }
         //controla message
         if(message.value == "") {
@@ -106,10 +117,9 @@ window.onload = function formValidation(event) {
             displayAlert();
         } else {
             message.className="form-control";
-            hideAlert();
+            //hideAlert();
         }
 
-        console.log(grupoRadio[0]); 
 
         
     }
